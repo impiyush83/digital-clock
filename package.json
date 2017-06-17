@@ -28,7 +28,7 @@
       "publish": [
         {
           "package": "digital-clock",
-          "repo": "digital-clock-deb",
+          "repo": "digital-clock-debian",
           "owner": "jviotti",
           "provider": "bintray"
         }
