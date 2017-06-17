@@ -83,6 +83,7 @@
   "scripts": {
     "pack": "build --dir",
     "dist": "build",
+    "release": "build",
     "postinstall": "install-app-deps",
     "start": "electron ."
   },
