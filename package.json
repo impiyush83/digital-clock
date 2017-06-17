@@ -21,7 +21,7 @@
       "icon": "assets/icons",
       "packageCategory": "utils",
       "maintainer": "Jane Doe <janedoe@example.com>",
-      "target": [ "snap" ],
+      "target": [ "deb", "rpm", "AppImage", "snap" ],
       "synopsis": "A minimalistic digital clock rendered in monospace font"
     },
     "deb": {
