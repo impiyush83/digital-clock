@@ -29,7 +29,7 @@
         {
           "package": "digital-clock",
           "repo": "digital-clock-debian",
-          "owner": "jviotti",
+          "user": "jviotti",
           "provider": "bintray"
         }
       ],
@@ -47,7 +47,7 @@
         {
           "package": "digital-clock",
           "repo": "digital-clock-rpm",
-          "owner": "jviotti",
+          "user": "jviotti",
           "provider": "bintray"
         }
       ],
