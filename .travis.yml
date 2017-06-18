@@ -1,37 +1,17 @@
-dist: trusty
-sudo: required
-
 language: c
+sudo: false
 
-env:
-  - ELECTRON_CACHE=$HOME/.electron
-
-matrix:
-  include:
-    - os: linux
-      env: CC=clang CXX=clang++ npm_config_clang=1
-      compiler: clang
-
-cache:
-  directories:
-  - node_modules
-  - $HOME/.electron
-  - $HOME/.cache
-
-addons:
-  apt:
-    packages:
-      - libgnome-keyring-dev
-      - libsecret-1-dev
-      - icnsutils
-      - snapd
-
-install:
-- nvm install 6
-- npm install
+services:
+  - docker
 
 script:
-- npm run release
+  - docker run -e "GH_TOKEN=$GH_TOKEN" -e "BT_TOKEN=$BT_TOKEN" -v $PWD:/app ubuntu:16.04 bash -c 
+    "apt-get update && 
+    apt-get install -y curl snapcraft icnsutils graphicsmagick xz-utils rpm gcc-multilib g++-multilib 
+    && curl -sL https://deb.nodesource.com/setup_6.x | bash - 
+    && apt-get install -y nodejs 
+    && cd /app 
+    && npm install && npm run release"
 
 branches:
   except:
