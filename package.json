@@ -63,6 +63,7 @@
       "confinement": "strict",
       "summary": "A minimalistic digital clock rendered in monospace font",
       "grade": "stable",
+      "buildPackages": [],
       "stagePackages": [
         "libnotify4",
         "libappindicator1",
