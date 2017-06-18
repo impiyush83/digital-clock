@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 sudo: false
 
 language: c
@@ -24,6 +24,7 @@ addons:
       - libgnome-keyring-dev
       - libsecret-1-dev
       - icnsutils
+      - snapcraft
 
 install:
 - nvm install 6
