@@ -5,10 +5,13 @@ services:
   - docker
 
 script:
-  - docker run ubuntu:16.04 bash -c 
-    "curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - &&
-    apt-get install -y nodejs snapcraft icnsutils graphicsmagick xz-utils rpm gcc-multilib g++-multilib &&
-    npm run release"
+  - docker run -v $PWD:/app ubuntu:16.04 bash -c 
+    "apt-get update && 
+    apt-get install -y curl snapcraft icnsutils graphicsmagick xz-utils rpm gcc-multilib g++-multilib 
+    && curl -sL https://deb.nodesource.com/setup_6.x | bash - 
+    && apt-get install -y nodejs 
+    && cd /app 
+    && npm install && npm run release"
 
 branches:
   except:
