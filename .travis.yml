@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: required
 
 language: c
 
@@ -24,7 +24,7 @@ addons:
       - libgnome-keyring-dev
       - libsecret-1-dev
       - icnsutils
-      - snapcraft
+      - snapd
 
 install:
 - nvm install 6
