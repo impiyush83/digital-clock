@@ -24,14 +24,17 @@ addons:
       - libgnome-keyring-dev
       - libsecret-1-dev
       - icnsutils
-      - snapd
 
 install:
-- nvm install 6
-- npm install
+  - nvm install 6
+  - npm install
+  - sudo echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted" >> /etc/apt/sources.list
+  - sudo echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted" >> /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install snapcraft
 
 script:
-- npm run release
+  - npm run release
 
 branches:
   except:
