@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Digital Clock is a dummy Electron application that displays the current time",
   "author": "John Doe <johndoe@example.com>",
-  "license": "BSD",
+  "license": "Apache-2.0",
   "main": "main.js",
   "homepage": "digitalclock.com",
   "build": {
@@ -16,75 +16,36 @@
         "owner": "jviotti"
       }
     ],
-    "linux": {
-      "category": "Utils",
-      "icon": "assets/icons",
-      "packageCategory": "utils",
-      "maintainer": "Jane Doe <janedoe@example.com>",
-      "target": [ "deb", "rpm", "AppImage", "snap" ],
-      "synopsis": "A minimalistic digital clock rendered in monospace font"
+    "mac": {
+      "target": [ "dmg", "pkg" ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
     },
-    "deb": {
-      "publish": [
+    "dmg": {
+      "background": "assets/background.tiff",
+      "icon": "assets/icon.icns",
+      "iconSize": 100,
+      "window": {
+        "width": 544,
+        "height": 408
+      },
+      "contents": [
         {
-          "package": "digital-clock",
-          "repo": "digital-clock-debian",
-          "user": "jviotti",
-          "provider": "bintray"
-        }
-      ],
-      "depends": [
-        "gconf2",
-        "gconf-service",
-        "libnotify4",
-        "libappindicator1",
-        "libxtst6",
-        "libnss3"
-      ]
-    },
-    "rpm": {
-      "publish": [
+          "x": 145,
+          "y": 257
+        },
         {
-          "package": "digital-clock",
-          "repo": "digital-clock-rpm",
-          "user": "jviotti",
-          "provider": "bintray"
+          "x": 400,
+          "y": 255,
+          "type": "link",
+          "path": "/Applications"
         }
-      ],
-      "depends": [
-        "GConf2",
-        "libnotify",
-        "nss",
-        "libappindicator",
-        "libXtst"
-      ]
-    },
-    "snap": {
-      "confinement": "strict",
-      "summary": "A minimalistic digital clock rendered in monospace font",
-      "grade": "stable",
-      "buildPackages": [],
-      "stagePackages": [
-        "libnotify4",
-        "libappindicator1",
-        "libxtst6",
-        "libnss3",
-        "libxss1",
-        "fontconfig-config",
-        "gconf2",
-        "libasound2",
-        "pulseaudio"
-      ],
-      "plugs": [
-        "default",
-        "unity8-calendar"
       ]
     }
   },
   "scripts": {
     "pack": "build --dir",
     "dist": "build",
-    "release": "build",
     "postinstall": "install-app-deps",
     "start": "electron ."
   },
@@ -93,3 +54,4 @@
     "electron-builder": "^19.5.0"
   }
 }
+
