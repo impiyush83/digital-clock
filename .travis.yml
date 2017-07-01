@@ -1,18 +1,24 @@
-language: c
+osx_image: xcode8.3
 sudo: false
-
-services:
-  - docker
-
+language: node_js
+node_js: '8'
+env:
+- ELECTRON_CACHE=$HOME/.electron
+matrix:
+  include:
+  - os: osx
+cache:
+  directories:
+  - node_modules
+  - "$HOME/Library/Caches/electron"
+  - "$HOME/Library/Caches/electron-builder"
+before_install:
+- openssl aes-256-cbc -K $encrypted_8b56ae4b0315_key -iv $encrypted_8b56ae4b0315_iv
+  -in apple.cer.enc -out apple.cer -d
+install:
+- npm install
 script:
-  - docker run -e "GH_TOKEN=$GH_TOKEN" -e "BT_TOKEN=$BT_TOKEN" -v $PWD:/app ubuntu:16.04 bash -c 
-    "apt-get update && 
-    apt-get install -y curl snapcraft icnsutils graphicsmagick xz-utils rpm gcc-multilib g++-multilib 
-    && curl -sL https://deb.nodesource.com/setup_6.x | bash - 
-    && apt-get install -y nodejs 
-    && cd /app 
-    && npm install && npm run release"
-
+- npm run dist
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
