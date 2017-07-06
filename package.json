@@ -17,7 +17,7 @@
       }
     ],
     "mac": {
-      "target": [ "dmg", "pkg" ],
+      "target": [ "dmg", "pkg", "zip" ],
       "icon": "assets/icon.icns",
       "category": "public.app-category.utilities"
     },
