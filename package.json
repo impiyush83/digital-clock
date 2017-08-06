@@ -41,6 +41,19 @@
           "path": "/Applications"
         }
       ]
+    },
+    "win": {
+      "target": [ "nsis", "portable" ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "license": "LICENSE",
+      "runAfterFinish": true
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
     }
   },
   "scripts": {
