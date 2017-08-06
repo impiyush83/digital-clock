@@ -16,7 +16,6 @@ install:
   - npm install
 
 build_script:
-  - set DEBUG=electron-builder
   - npm run dist
 
 test: off
