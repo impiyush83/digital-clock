@@ -50,12 +50,10 @@
       "installerIcon": "assets/icon.ico",
       "uninstallerIcon": "assets/icon.ico",
       "license": "LICENSE",
-      "runAfterFinish": true,
-      "artifactName": "${productName} Setup ${version} ${arch}.${ext}"
+      "runAfterFinish": true
     },
     "portable": {
-      "requestExecutionLevel": "user",
-      "artifactName": "${productName} ${version} ${arch}.${ext}"
+      "requestExecutionLevel": "user"
     }
   },
   "scripts": {

@@ -2,7 +2,6 @@
 # for the most up to date recommended appveyor.yml
 platform:
   - x64
-  - x86
 
 cache:
   - node_modules
