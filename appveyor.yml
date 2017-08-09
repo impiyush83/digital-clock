@@ -14,7 +14,7 @@ init:
   - set
 
 install:
-  - ps: Install-Product node 6
+  - ps: Install-Product node 6 $env:Platform
   - npm install
 
 build_script:
