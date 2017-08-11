@@ -1,6 +1,6 @@
 {
   "name": "digital-clock",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Digital Clock is a dummy Electron application that displays the current time",
   "author": "John Doe <johndoe@example.com>",
   "license": "Apache-2.0",
