@@ -47,7 +47,6 @@ electron.app.on('ready', () => {
   windows.main = new electron.BrowserWindow({
     width: 450,
     height: 200,
-    titleBarStyle: 'hidden-inset',
     show: false
   });
 
