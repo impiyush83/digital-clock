@@ -9,33 +9,26 @@
   "build": {
     "appId": "com.example.digitalclock",
     "productName": "Digital Clock",
-    "publish": [
-      {
-        "provider": "github",
-        "repo": "digital-clock",
-        "owner": "jviotti"
-      }
-    ],
     "win": {
       "target": [ 
-        "nsis",
-        "portable" 
+        "appx"
       ],
       "icon": "assets/icon.ico"
     },
-    "nsis": {
-      "installerIcon": "assets/icon.ico",
-      "uninstallerIcon": "assets/icon.ico",
-      "license": "LICENSE",
-      "runAfterFinish": true
-    },
-    "portable": {
-      "requestExecutionLevel": "user"
+    "appx": {
+      "backgroundColor": "#f5f5f5",
+      "publisherDisplayName": "Juan Cruz Viotti",
+      "displayName": "Digital Clock",
+      "identityName": "digitalclock",
+      "languages": [
+        "en-US",
+        "en-GB"
+      ]
     }
   },
   "scripts": {
     "pack": "build --dir",
-    "dist": "build --arch all",
+    "dist": "build",
     "postinstall": "install-app-deps",
     "start": "electron ."
   },
