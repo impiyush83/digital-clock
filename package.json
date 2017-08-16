@@ -9,20 +9,54 @@
   "build": {
     "appId": "com.example.digitalclock",
     "productName": "Digital Clock",
-    "win": {
-      "target": [ 
-        "appx"
-      ],
-      "icon": "assets/icon.ico"
+    "publish": [
+      {
+        "provider": "github",
+        "repo": "digital-clock",
+        "owner": "jviotti"
+      }
+    ],
+    "linux": {
+      "category": "Utils",
+      "icon": "assets/icons",
+      "packageCategory": "utils",
+      "maintainer": "Jane Doe <janedoe@example.com>",
+      "target": [ "deb", "rpm", "AppImage", "snap"  ],
+      "synopsis": "A minimalistic digital clock rendered in monospace font"
     },
-    "appx": {
-      "backgroundColor": "#f5f5f5",
-      "publisherDisplayName": "Juan Cruz Viotti",
-      "displayName": "Digital Clock",
-      "identityName": "digitalclock",
-      "languages": [
-        "en-US",
-        "en-GB"
+    "deb": {
+      "publish": [
+        {
+          "package": "digital-clock",
+          "repo": "digital-clock-debian",
+          "user": "jviotti",
+          "provider": "bintray"
+        }
+      ],
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
+      ]
+    },
+    "rpm": {
+      "publish": [
+        {
+          "package": "digital-clock",
+          "repo": "digital-clock-rpm",
+          "user": "jviotti",
+          "provider": "bintray"
+        }
+      ],
+      "depends": [
+        "GConf2",
+        "libnotify",
+        "nss",
+        "libappindicator",
+        "libXtst"
       ]
     }
   },
@@ -32,13 +66,9 @@
     "postinstall": "install-app-deps",
     "start": "electron ."
   },
+
   "devDependencies": {
     "electron": "1.6.6",
-    "electron-builder": "^19.5.0"
-  },
-  "dependencies": {
-    "electron-is-dev": "^0.2.0",
-    "electron-log": "^2.2.7",
-    "electron-updater": "^2.4.4"
+    "electron-builder": "^19.22.1"
   }
 }
