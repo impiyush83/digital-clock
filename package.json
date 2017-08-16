@@ -30,6 +30,7 @@
           "package": "digital-clock",
           "repo": "digital-clock-debian",
           "user": "jviotti",
+          "component": "digital-clock",
           "provider": "bintray"
         }
       ],
