@@ -10,7 +10,7 @@ env:
   global:
     - ELECTRON_CACHE=$HOME/.cache/electron
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-    - PATH=$PATH:/tmp
+    - PATH=$PATH:/tmp/git-lfs
 
 os:
   - linux
